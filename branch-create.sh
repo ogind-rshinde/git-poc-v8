@@ -38,13 +38,13 @@ echo "$(tput setaf 3) "
 if test "$branchOption" = 1; then
     git checkout main
     git pull origin main
-    git checkout -b "feat-"$ticket"|"$USERNAME"|"${description,,}
+    git checkout -b "feat-"$ticket"/"$USERNAME"/"${description,,}
 fi
 
 if test "$branchOption" = 2; then
     git checkout main
     git pull origin main
-    git checkout -b "dvbg-"$ticket"|"$USERNAME"|"${description,,}
+    git checkout -b "dvbg-"$ticket"/"$USERNAME"/"${description,,}
 fi
 
 if test "$branchOption" = 3; then
@@ -52,14 +52,14 @@ if test "$branchOption" = 3; then
     git pull origin release/next  
     git checkout main
     git pull origin main      
-    git checkout -b "qabg-"$ticket"|"$USERNAME"|"${description,,}
+    git checkout -b "qabg-"$ticket"/"$USERNAME"/"${description,,}
     git reset --hard release/next    
 fi
 
 if test "$branchOption" = 4; then
     git checkout hotfix/next
     git pull origin hotfix/next 
-    git checkout -b "hfbg-"$ticket"|"$USERNAME"|"${description,,}
+    git checkout -b "hfbg-"$ticket"/"$USERNAME"/"${description,,}
 fi
 
 echo "$(tput setaf 2) ********************** Branch is created successfully ****************************"
